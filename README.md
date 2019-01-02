@@ -1,6 +1,15 @@
 [//]: # (Image References)
 [network]: ./images/fcn_network.png
 [result]: ./images/training_result.png
+[follow1]: ./images/follow1.png
+[follow2]: ./images/follow2.png
+[follow3]: ./images/follow3.png
+[patrol_wo_target1]: ./images/patrol_wo_target1.png
+[patrol_wo_target2]: ./images/patrol_wo_target2.png
+[patrol_wo_target3]: ./images/patrol_wo_target3.png
+[patrol_target1]: ./images/patrol_target1.png
+[patrol_target2]: ./images/patrol_target2.png
+[patrol_target3]: ./images/patrol_target3.png
 
 [![Udacity - Robotics NanoDegree Program](https://s3-us-west-1.amazonaws.com/udacity-robotics/Extra+Images/RoboND_flag.png)](https://www.udacity.com/robotics)
 
@@ -73,6 +82,23 @@ Workers refers to the number of parallel threads that perform computation.
 
 ### Results
 I have managed to achieve a score of 0.433555988065 with current settings.
+
+#### 1. Following the target
+![alt][follow1]
+![alt][follow2]
+![alt][follow3]
+
+#### 2. Patrol without the target
+![alt][patrol_wo_target1]
+![alt][patrol_wo_target2]
+![alt][patrol_wo_target3]
+
+#### 3. Patrol with the target
+![alt][patrol_target1]
+![alt][patrol_target2]
+![alt][patrol_target3]
+
+
 
 For detailed analysis, please visit the jupyter notebook [here](https://github.com/mykhani/RoboND-DeepLearning-Project/blob/master/code/model_training.ipynb).
 
