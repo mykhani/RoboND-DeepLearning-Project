@@ -1,5 +1,6 @@
 [//]: # (Image References)
 [network]: ./images/fcn_network.png
+[result]: ./images/training_result.png
 
 [![Udacity - Robotics NanoDegree Program](https://s3-us-west-1.amazonaws.com/udacity-robotics/Extra+Images/RoboND_flag.png)](https://www.udacity.com/robotics)
 
@@ -68,6 +69,8 @@ Workers refers to the number of parallel threads that perform computation.
 ### Results
 I have managed to achieve a score of 0.433555988065 with current settings.
 
+Here is the result of training.
+![alt text][result]
 ### Future Enhancements:
 * It was observed that increasing the number of layers from 3 to 4 didn’t have a significant effect on the training/validation loss. This points out to the fact that the available data is limited to take full advantage of extra layer added. So, in future I would generate data from the quad simulator, consisting of different scenarios, instead of relying on the default provided data.
 * I will try increasing the batchsize and see it's result.
