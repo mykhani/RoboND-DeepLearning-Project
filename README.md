@@ -51,7 +51,7 @@ I played around with different settings for filter depth for each layer. I found
 Learning rate corresponds to the incremental correction in weights and bias. Using a very large learning rate results in faster convergence but usually higher loss.
 
 ##### Batch size
-Batch size refers to the number of images that goes into the network in a single iteration and results in weights update. The value for batch size ranges from 1 to total number of images. The value of 1 results in pure gradient descent while value greater than one results in stochastic gradient descent. Using a very small value for a very large dataset is very computationally intensive so its value is always a trade-off between accuracy and processing speed. For this project, I have selected the batch size to be 13.
+Batch size refers to the number of images that goes into the network in a single iteration and results in weights update. The value for batch size ranges from 1 to total number of images. The value equal to total images in a dataset results in pure gradient descent while value less than total dataset results in stochastic gradient descent. Using a large batch size for a very large dataset is very computationally intensive so its value is always a trade-off between accuracy and processing speed. For this project, I have selected the batch size to be 13.
 
 ##### Epoch
 Epoch refers to a one iteration in which the complete data set has gone through the network. A good criteria for determining the epoch number is by observing the training loss in the network and stopping if there is no further significant improvement. I found experimentally that the value of loss stablizes after 15 epochs. 
