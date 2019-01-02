@@ -74,6 +74,8 @@ Workers refers to the number of parallel threads that perform computation.
 ### Results
 I have managed to achieve a score of 0.433555988065 with current settings.
 
+For detailed analysis, please visit the jupyter notebook [here](https://github.com/mykhani/RoboND-DeepLearning-Project/blob/master/code/model_training.ipynb).
+
 Here is the result of training.
 ![alt text][result]
 ### Future Enhancements:
