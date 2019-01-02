@@ -30,11 +30,14 @@ The data from first convolution layers goes into the 1x1 convolution layer, whic
 
 #### 3. Decoder
 The decoder part is responsible for performing up-sampling and reverse convolution on the generated features so to generate an output image of same size as that of input.
- 
-#### 4. Skip connections
+
+#### 4. Drawback of Encoder/Decoder Architecture
+One major drawback of encoder/decoder architecture for semantic segmentation is the loss of feature details while data propagates from encoder to decoder block. The several alternating convolutional and pooling layers of the encoder block cause downsampling of the feature maps. The decoder block also has to extrapolate features using upsampling and rely on skip-connections to fill in the gaps. As a result, decoder block is unable to reconstruct the image with completely sharp and accurate feature details.    
+
+#### 5. Skip connections
 Skip connections is a method in which a layer in encoder block is connected to a corresponding layer in the decoder block in a way to retain some features.  
 
-#### 5. Fully connected layer
+#### 6. Fully connected layer
 Finally the extrapolated feature set is connected to a fully connected layer in the end, which classifies the pixels into required classes.
 
 ### Training the FCN
@@ -134,6 +137,9 @@ This scenerio shows the quadcopter following the target from large distance. Thi
 For detailed analysis, please visit the jupyter notebook [here](https://github.com/mykhani/RoboND-DeepLearning-Project/blob/master/code/model_training.ipynb).
 
 Here is the HTML version of the model. [Model](https://github.com/mykhani/RoboND-DeepLearning-Project/blob/master/model_training.html)
+
+### Detecting other objects 
+This model has been trained to detect the target "hero" object but it can be reused to detect other objects as well. With it's four layers, it should be able to detect fairly complex features of an object. However, the model needs to be retrained with the images of the desired object to be detected.
 
 ### Future Enhancements:
 * It was observed that increasing the number of layers from 3 to 4 didn’t have a significant effect on the training/validation loss. This points out to the fact that the available data is limited to take full advantage of extra layer added. So, in future I would generate data from the quad simulator, consisting of different scenarios, instead of relying on the default provided data.
