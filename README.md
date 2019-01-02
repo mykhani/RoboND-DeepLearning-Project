@@ -10,6 +10,8 @@ Please follow this link for detailed steps for setting up the environment: [link
 ### Network Architecture
 For pixel-wise classification in this project, Fully Convolutional Network is used to detect the pixels that belong to our target “hero” object. Compared to CNN, FCN retain spatial information which is helpful in identifying the pixels as well as their location in the image. It consists of two main parts, encoder and decoder. Below is the diagram of the FCN network I have used in this project.
 
+![alt text][network]
+
 ### Elements of FCN pipeline
 #### 1. Encoder
 This is a series of convolution layers which generate sets of features. It consists of four alternate convolution layers, each followed by a max pooling layer to down-sample the data (so each subsequent layer looks at a lower resolution image) and enhances dominant features by selecting the maximum value. This down-sampling also results in better generalization of the model so it is able to correctly classify the unforeseen images.
