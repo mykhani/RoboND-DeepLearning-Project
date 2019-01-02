@@ -99,6 +99,7 @@ average intersection over union for other people is 0.4013233594934088
 average intersection over union for the hero is 0.9122916911511715
 number true positives: 539, number false positives: 0, number false negatives: 0
 ```
+As the above score shows and is evident from the image, the model doesn't detect other people very well as they lie very close together and they are sort of blended together. One possible cause for such bahvior might be the max pooling layer that combines together multiple pixels and favors strong features. 
 
 #### 2. Patrol without the target
 ![alt][patrol_wo_target1]
@@ -113,6 +114,7 @@ average intersection over union for other people is 0.8260829971051329
 average intersection over union for the hero is 0.0
 number true positives: 0, number false positives: 12, number false negatives: 0
 ```
+Here the score accurately depict the correct scenerio without hero present.
 
 #### 3. Patrol with the target
 ![alt][patrol_target1]
@@ -127,6 +129,7 @@ average intersection over union for other people is 0.4788219919392533
 average intersection over union for the hero is 0.20668942176575333
 number true positives: 122, number false positives: 1, number false negatives: 179
 ```
+This scenerio shows the quadcopter following the target from large distance. This shows that our model lacks when the target is far away. One possible solution to overcome this problem would be to gather more data with target far away.
 
 For detailed analysis, please visit the jupyter notebook [here](https://github.com/mykhani/RoboND-DeepLearning-Project/blob/master/code/model_training.ipynb).
 
