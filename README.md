@@ -99,7 +99,7 @@ average intersection over union for other people is 0.4013233594934088
 average intersection over union for the hero is 0.9122916911511715
 number true positives: 539, number false positives: 0, number false negatives: 0
 ```
-As the above score shows and is evident from the image, the model doesn't detect other people very well as they lie very close together and they are sort of blended together. One possible cause for such bahvior might be the max pooling layer that combines together multiple pixels and favors strong features. 
+The above image shows that our model accurately detects the target when it is following it closely. 
 
 #### 2. Patrol without the target
 ![alt][patrol_wo_target1]
@@ -114,7 +114,7 @@ average intersection over union for other people is 0.8260829971051329
 average intersection over union for the hero is 0.0
 number true positives: 0, number false positives: 12, number false negatives: 0
 ```
-Here the score accurately depict the correct scenerio without hero present.
+As is evident from the above image, the model doesn't detect other people very well as they lie very close together and they are sort of blended together. One possible cause for such bahvior might be the max pooling layer that combines together multiple pixels and favors strong features. Another possible reason might be that the people are very far and our model is not very accurate detecting targets at larger distances. The score accurately depict the correct scenerio without hero present.
 
 #### 3. Patrol with the target
 ![alt][patrol_target1]
