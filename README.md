@@ -83,29 +83,55 @@ Workers refers to the number of parallel threads that perform computation.
 ### Results
 I have managed to achieve a score of 0.433555988065 with current settings.
 
+Here is the result of training after experimentally tuning the hyperparameters.
+![alt text][result]
+
 #### 1. Following the target
 ![alt][follow1]
 ![alt][follow2]
 ![alt][follow3]
+
+Here are the scores for this scenario.
+```
+number of validation samples intersection over the union evaulated on 542
+average intersection over union for background is 0.9962365811248797
+average intersection over union for other people is 0.4013233594934088
+average intersection over union for the hero is 0.9122916911511715
+number true positives: 539, number false positives: 0, number false negatives: 0
+```
 
 #### 2. Patrol without the target
 ![alt][patrol_wo_target1]
 ![alt][patrol_wo_target2]
 ![alt][patrol_wo_target3]
 
+Here are the scores for this scenario.
+```
+number of validation samples intersection over the union evaulated on 270
+average intersection over union for background is 0.9909418049689475
+average intersection over union for other people is 0.8260829971051329
+average intersection over union for the hero is 0.0
+number true positives: 0, number false positives: 12, number false negatives: 0
+```
+
 #### 3. Patrol with the target
 ![alt][patrol_target1]
 ![alt][patrol_target2]
 ![alt][patrol_target3]
 
-
+Here are the scores for this scenario.
+```
+number of validation samples intersection over the union evaulated on 322
+average intersection over union for background is 0.997046691231469
+average intersection over union for other people is 0.4788219919392533
+average intersection over union for the hero is 0.20668942176575333
+number true positives: 122, number false positives: 1, number false negatives: 179
+```
 
 For detailed analysis, please visit the jupyter notebook [here](https://github.com/mykhani/RoboND-DeepLearning-Project/blob/master/code/model_training.ipynb).
 
 Here is the HTML version of the model. [Model](https://github.com/mykhani/RoboND-DeepLearning-Project/blob/master/model_training.html)
 
-Here is the result of training.
-![alt text][result]
 ### Future Enhancements:
 * It was observed that increasing the number of layers from 3 to 4 didn’t have a significant effect on the training/validation loss. This points out to the fact that the available data is limited to take full advantage of extra layer added. So, in future I would generate data from the quad simulator, consisting of different scenarios, instead of relying on the default provided data.
 * I will try increasing the batchsize and see it's result.
