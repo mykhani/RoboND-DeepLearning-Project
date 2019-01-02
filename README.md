@@ -40,12 +40,12 @@ The selection of the number of network layers and filters is purely experimental
 I played around with different settings for filter depth for each layer. I found out that the training loss decreases with deeper convolution layers, but due to consequent higher number of parameters, the validation loss also increases, due to over-fitting.    
 
 #### 3. Hyerparameters
-* learning_rate = 0.001
-* batch_size = 13
-* num_epochs = 15
-* steps_per_epoch = 336
-* validation_steps = 40
-* workers = 8
+*learning_rate = 0.001
+*batch_size = 13
+*num_epochs = 50
+*steps_per_epoch = 336
+*validation_steps = 40
+*workers = 8
 
 ##### Learning rate
 Learning rate corresponds to the incremental correction in weights and bias. Using a very large learning rate results in faster convergence but usually higher loss.
@@ -54,7 +54,7 @@ Learning rate corresponds to the incremental correction in weights and bias. Usi
 Batch size refers to the number of images that goes into the network in a single iteration and results in weights update. The value for batch size ranges from 1 to total number of images. The value equal to total images in a dataset results in pure gradient descent while value less than total dataset results in stochastic gradient descent. Using a large batch size for a very large dataset is very computationally intensive so its value is always a trade-off between accuracy and processing speed. For this project, I have selected the batch size to be 13.
 
 ##### Epoch
-Epoch refers to a one iteration in which the complete data set has gone through the network. A good criteria for determining the epoch number is by observing the training loss in the network and stopping if there is no further significant improvement. I found experimentally that the value of loss stablizes after 15 epochs. 
+Epoch refers to a one iteration in which the complete data set has gone through the network. A good criteria for determining the epoch number is by observing the training loss in the network and stopping if there is no further significant improvement. I found experimentally that the value of loss stablizes after 50 epochs. 
   
 ##### Steps per epoch
 Steps per epoch is roughly the total training images divided by batch size. 
@@ -65,7 +65,10 @@ Validation steps is total validation images divided by batch size.
 ##### Workers
 Workers refers to the number of parallel threads that perform computation.
 
+### Results
+I have managed to achieve a score of 0.433555988065 with current settings.
+
 ### Future Enhancements:
 * It was observed that increasing the number of layers from 3 to 4 didn’t have a significant effect on the training/validation loss. This points out to the fact that the available data is limited to take full advantage of extra layer added. So, in future I would generate data from the quad simulator, consisting of different scenarios, instead of relying on the default provided data.
-
+* I will try increasing the batchsize and see it's result.
 * I will explore some advanced CNN architecture like inception module and see how it compares to my existing solution.
