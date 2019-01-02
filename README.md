@@ -43,6 +43,8 @@ The selection of the number of network layers and filters is purely experimental
 I played around with different settings for filter depth for each layer. I found out that the training loss decreases with deeper convolution layers, but due to consequent higher number of parameters, the validation loss also increases, due to over-fitting.    
 
 #### 3. Hyerparameters
+The values of the below hyperparameters were found using a trial and error method.
+
 * learning_rate = 0.001
 * batch_size = 13
 * num_epochs = 50
@@ -50,8 +52,9 @@ I played around with different settings for filter depth for each layer. I found
 * validation_steps = 40
 * workers = 8
 
+Below are some considerations kept in mind while tunining the hyperparameters.
 ##### Learning rate
-Learning rate corresponds to the incremental correction in weights and bias. Using a very large learning rate results in faster convergence but usually higher loss.
+Learning rate corresponds to the incremental correction in weights and bias. Using a very large learning rate results in faster convergence but usually higher loss. I experimented with both 0.01 and 0.001 and found 0.001 to yield lower loss.
 
 ##### Batch size
 Batch size refers to the number of images that goes into the network in a single iteration and results in weights update. The value for batch size ranges from 1 to total number of images. The value equal to total images in a dataset results in pure gradient descent while value less than total dataset results in stochastic gradient descent. Using a large batch size for a very large dataset is very computationally intensive so its value is always a trade-off between accuracy and processing speed. For this project, I have selected the batch size to be 13.
@@ -60,7 +63,7 @@ Batch size refers to the number of images that goes into the network in a single
 Epoch refers to a one iteration in which the complete data set has gone through the network. A good criteria for determining the epoch number is by observing the training loss in the network and stopping if there is no further significant improvement. I found experimentally that the value of loss stablizes after 50 epochs. 
   
 ##### Steps per epoch
-Steps per epoch is roughly the total training images divided by batch size. 
+Steps per epoch is roughly the total training images divided by batch size. The default test data consists of 4131 images. 
 
 ##### Validation steps
 Validation steps is total validation images divided by batch size.
