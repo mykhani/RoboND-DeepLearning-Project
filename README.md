@@ -17,7 +17,7 @@ For pixel-wise classification in this project, Fully Convolutional Network is us
 This is a series of convolution layers which generate sets of features. It consists of four alternate convolution layers, each followed by a max pooling layer to down-sample the data (so each subsequent layer looks at a lower resolution image) and enhances dominant features by selecting the maximum value. This down-sampling also results in better generalization of the model so it is able to correctly classify the unforeseen images.
 
 #### 2. 1x1 Convolution
-The data from first convolution layers goes into the 1x1 convolution layer, which aggregates all the feature maps so far to generate a final set of features for classification. This 1x1 convolution acts just like a normal fully connected layer as it generates same number of features, but it differs in that it retains the spatial data regarding the generated features. Using this also has an additional method that image of any size can be fed to this network.
+The data from first convolution layers goes into the 1x1 convolution layer, which aggregates all the feature maps so far to generate a final set of features for classification. This 1x1 convolution acts just like a normal fully connected layer as it generates same number of features, but it differs in that it retains the spatial data regarding the generated features. Using this also has an additional benefit i.e. image of any size can be fed to this network.
 
 #### 3. Decoder
 The decoder part is responsible for performing up-sampling and reverse convolution on the generated features so to generate an output image of same size as that of input.
