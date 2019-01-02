@@ -41,12 +41,12 @@ The selection of the number of network layers and filters is purely experimental
 I played around with different settings for filter depth for each layer. I found out that the training loss decreases with deeper convolution layers, but due to consequent higher number of parameters, the validation loss also increases, due to over-fitting.    
 
 #### 3. Hyerparameters
-*learning_rate = 0.001
-*batch_size = 13
-*num_epochs = 50
-*steps_per_epoch = 336
-*validation_steps = 40
-*workers = 8
+* learning_rate = 0.001
+* batch_size = 13
+* num_epochs = 50
+* steps_per_epoch = 336
+* validation_steps = 40
+* workers = 8
 
 ##### Learning rate
 Learning rate corresponds to the incremental correction in weights and bias. Using a very large learning rate results in faster convergence but usually higher loss.
